@@ -65,7 +65,6 @@ require 'cek.php';
                                                 <th>Nama Barang</th>
                                                 <th>Quantity</th>
                                                 <th>Penerima</th>
-                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -84,36 +83,7 @@ require 'cek.php';
 	                                        <td><?=$namabarang;?></td>
 	                                        <td><?=$qty;?></td>
 	                                        <td><?=$penerima;?></td>
-                                            <td>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idb;?>"> Delete</button>
-                                            </td>
-                                        </tr>
-                                        <!-- Delete Modal -->
-                                        <div class="modal fade" id="delete<?=$idb;?>">
-                                        <div class="modal-dialog">
-                                        <div class="modal-content">
-                                        
-                                            <!-- Modal Header -->
-                                            <div class="modal-header">
-                                            <h4 class="modal-title">Hapus Barang?</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            </div>
-                                            
-                                            <!-- Modal body -->
-                                            <form method="post">
-                                            <div class="modal-body">
-                                                Apakah anda yakin ingin mengapus <b> <?=$namabarang;?></b>?
-                                            <input type="hidden" name="idb" value="<?=$idb;?>">
-                                            <br>
-                                            <br>
-                                            <button type="submit" class="btn btn-danger" name="hapusbarang">Submit</button>
-                                            </div>
-                                            </form>
-                                            
-                                        </div>
-                                        </div>
-                                        </div>
-                                        
+                                        </tr>                                        
                                         <?php
                                         };
                                         ?>

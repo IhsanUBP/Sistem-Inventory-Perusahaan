@@ -38,6 +38,10 @@ require 'cek.php';
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Barang Keluar
                             </a>
+                            <a class="nav-link" href="admin.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Kelola Admin
+                            </a>
                             <a class="nav-link" href="logout.php">
                                 Logout
                             </a>
@@ -61,7 +65,8 @@ require 'cek.php';
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Tanggal Masuk</th>
+                                                <th>No</th>
+                                                <th>Tanggal Pengembalian</th>
                                                 <th>Nama Barang</th>
                                                 <th>Quantity</th>
                                                 <th>Penerima</th>
@@ -70,6 +75,7 @@ require 'cek.php';
                                         <tbody>
                                         <?php
                                             $ambilsemuadatastock = mysqli_query($conn,"select * from masuk m, stock s where s.idbarang = m.idbarang");
+                                            $i = 1;
                                             while($data=mysqli_fetch_array($ambilsemuadatastock)){
                                                 $idb = $data['idbarang'];
                                                 $tanggal = $data['tanggal'];
@@ -79,6 +85,7 @@ require 'cek.php';
 
                                         ?>
                                         <tr>
+                                            <td><?=$i++;?></td>
 	                                        <td><?=$tanggal;?></td>
 	                                        <td><?=$namabarang;?></td>
 	                                        <td><?=$qty;?></td>
